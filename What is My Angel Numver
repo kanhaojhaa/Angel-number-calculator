@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Number Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .calculator-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .result-popup {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-angel text-3xl mr-3 text-yellow-300"></i>
+                    <h1 class="text-3xl font-bold">Angel Number Calculator</h1>
+                </div>
+                <nav class="flex space-x-6">
+                    <a href="#" class="hover:text-yellow-300 transition">Home</a>
+                    <a href="https://angelnumbercalculator.us/calculator/" class="hover:text-yellow-300 transition">Calculator</a>
+                    <a href="#" class="hover:text-yellow-300 transition">About</a>
+                    <a href="#" class="hover:text-yellow-300 transition">Meanings</a>
+                    <a href="#" class="hover:text-yellow-300 transition">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-xl p-8 calculator-shadow">
+                <h2 class="text-2xl font-semibold text-indigo-900 mb-6 text-center">Discover Your Angel Number</h2>
+                
+                <div class="mb-8">
+                    <p class="text-gray-600 mb-4">
+                        Angel numbers are sequences of numbers that carry divine guidance by referring to specific numerological meanings. 
+                        Enter your birth date below to calculate your personal angel number.
+                    </p>
+                </div>
+                
+                <form id="angelForm" class="space-y-6">
+                    <div>
+                        <label for="birthdate" class="block text-sm font-medium text-gray-700 mb-1">Birth Date</label>
+                        <input type="date" id="birthdate" name="birthdate" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    
+                    <div>
+                        <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">Full Name (Optional)</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name for numerology" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-calculator mr-2"></i> Calculate Angel Number
+                    </button>
+                </form>
+                
+                <div id="resultContainer" class="hidden mt-8 result-popup">
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-star text-yellow-500 text-2xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-indigo-900">Your Angel Number is <span id="angelNumber" class="text-2xl font-bold">0</span></h3>
+                                <div id="meaningText" class="mt-2 text-gray-600">
+                                    <!-- Dynamic content will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-xl p-8 calculator-shadow">
+                <h3 class="text-xl font-semibold text-indigo-900 mb-4">About Angel Numbers</h3>
+                <p class="text-gray-600 mb-4">
+                    Angel numbers are messages from the divine realm that appear in your life to guide and support you. 
+                    These numbers often appear in sequences like 111, 222, or 1234, and each has a unique spiritual meaning.
+                </p>
+                <p class="text-gray-600">
+                    Your personal angel number is calculated by reducing your birth date to a single digit (or master number 11, 22, or 33). 
+                    This number carries special significance for your life path and spiritual journey.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="flex items-center">
+                        <i class="fas fa-angel text-xl mr-2 text-yellow-300"></i>
+                        <span class="font-medium">Angel Number Calculator</span>
+                    </p>
+                    <p class="text-indigo-200 text-sm mt-1">Discover the divine messages in your life</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-indigo-200 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-indigo-200 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-indigo-200 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-indigo-200 hover:text-white transition">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-indigo-800 mt-6 pt-6 text-sm text-indigo-300 text-center">
+                <p>&copy; 2023 Angel Number Calculator. All rights reserved.</p>
+                <p class="mt-1">This tool is for entertainment purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('angelForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const birthdate = document.getElementById('birthdate').value;
+            if (!birthdate) {
+                alert('Please enter your birth date');
+                return;
+            }
+            
+            // Calculate angel number from birthdate (YYYY-MM-DD)
+            const dateParts = birthdate.split('-');
+            const day = parseInt(dateParts[2]);
+            const month = parseInt(dateParts[1]);
+            const year = parseInt(dateParts[0]);
+            
+            let sum = day + month + year;
+            let angelNumber = reduceToSingleDigit(sum);
+            
+            // Check for master numbers
+            if (sum === 11 || sum === 22 || sum === 33) {
+                angelNumber = sum;
+            }
+            
+            // Display result
+            document.getElementById('angelNumber').textContent = angelNumber;
+            document.getElementById('meaningText').innerHTML = getAngelNumberMeaning(angelNumber);
+            document.getElementById('resultContainer').classList.remove('hidden');
+            
+            // Scroll to result
+            document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        function reduceToSingleDigit(number) {
+            while (number > 9 && number !== 11 && number !== 22 && number !== 33) {
+                let sum = 0;
+                while (number > 0) {
+                    sum += number % 10;
+                    number = Math.floor(number / 10);
+                }
+                number = sum;
+            }
+            return number;
+        }
+        
+        function getAngelNumberMeaning(number) {
+            const meanings = {
+                1: "New beginnings, independence, and leadership. The angels are encouraging you to stay positive as you manifest your desires.",
+                2: "Balance, harmony, and partnerships. This number signifies faith and trust in your divine life purpose.",
+                3: "Creativity, self-expression, and growth. The ascended masters are helping you to focus on the divine spark within you.",
+                4: "Stability, organization, and hard work. Your angels are supporting you in building strong foundations.",
+                5: "Change, freedom, and adventure. Significant life changes are coming your way.",
+                6: "Love, family, and responsibility. Focus on gratitude and service to others.",
+                7: "Spiritual awakening, intuition, and inner-wisdom. You're on the right path.",
+                8: "Abundance, power, and karma. Financial and material gains are coming.",
+                9: "Completion, humanitarianism, and lightworking. A phase in your life is ending.",
+                11: "Spiritual enlightenment, intuition, and inspiration. A master number of illumination.",
+                22: "Master builder, big dreams, and practicality. The most powerful number for manifesting.",
+                33: "Master teacher, compassion, and blessings. A highly spiritual number of guidance."
+            };
+            
+            return meanings[number] || "This angel number carries a special message meant just for you. Pay attention to where and when you see this number appearing in your life.";
+        }
+    </script>
+</body>
+</html>
